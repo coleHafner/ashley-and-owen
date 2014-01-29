@@ -11,8 +11,24 @@ angular.module('ashleyAndOwenApp', ['ui.router', 'ui.bootstrap'])
 				controller: 'IndexCtrl',
 				templateUrl: '/views/index.html'
 			})
-	}]);
+	}])
 
-$(function(){
-	$('#site-nav').sticky({topSpacing: 0, elementClassName: 'bottom-shadow'});
-});
+	.run(['$rootScope', function($rootScope) {
+		$rootScope.navItems = [
+			{label: 'Details',		sref: 'details'},
+			{label: 'Rsvp',			sref: 'rsvp'},
+			{label: 'Gallery',		sref: 'gallery'},
+			{label: 'Our Story',	sref: 'about'}
+		];
+
+		$rootScope.goTo = function(pageId) {
+			var page = $('#' + pageId);
+
+			if(pageId == 'details') {
+				$(document).scrollTop(0);
+				return;
+			}
+
+			page.ScrollTo();
+		}
+	}]);

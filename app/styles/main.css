@@ -1,5 +1,5 @@
 body {
-    background: url(http://static.tumblr.com/84ef105f0a35da424dcc2fd824231503/tq8ouej/QeJmv7fdg/tumblr_static_nyc.jpg) no-repeat center center fixed;
+    background: url(../images/bg2.jpg) no-repeat center center fixed;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
 	-webkit-background-size: cover;
@@ -8,71 +8,18 @@ body {
 	background-size: cover;
 }
 
-.content-wrapper {
-	width:1080px;
-	margin:auto;
-	background-color: #eee;
-	box-shadow: 0 0 10px rgba(0,0,0,.7);
-	z-index: 1;
+h1, h4 {
+	font-family: 'Great Vibes', serif;
+	color:#fff;
+	opacity: 1;
 }
 
-.header {
-	height:300px;
+h1 {
+	font-size:40px;
 }
 
-.nav {
-	min-height: 50px;
-	background-color:#dedbdb;
-}
-
-.content {
-	min-height: 500px;
-	padding:10px;
-}
-
-.splash-img-cake, .splash-img-kablam, .splash-img-heart {
-	position: absolute;
-	width:170px;
-	height:170px;
-	z-index: 2;
-}
-
-.splash-img-cake img, .splash-img-kablam img, .splash-img-heart img {
-	width:160px;
-}
-
-.splash-img-cake {
-	top:70px;
-	right:10px;
-	transform: rotate(80deg);
-	-webkit-transform: rotate(80deg);
-}
-
-.splash-img-heart {
-	top:40px;
-	left:200px;
-}
-
-.splash-img-kablam {
-	top:70px;
-	left:10px;
-}
-
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
-    background-color: #fff;
-    border-radius: 6px;
-    padding: 60px;
-}
-
-.hero-unit h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+h4 {
+	font-size:25px;
 }
 
 .container {
@@ -81,38 +28,54 @@ body {
 	width:100%;
 }
 
-.slide{
+.slide {
+	position:relative;
 	width:100%;
 	height:792px;
-	position:relative;
 	background-color:#fff;
+	border-bottom:3px solid #eee;
 }
 
 .slide1 {
 	position:fixed;
-	left:0;
-	right:0;
 	top:0;
+	right:0;
 	bottom:0;
+	left:0;
 	background-color:transparent;
 }
 
 .site-nav {
 	position:absolute;
+	left:0;
+	top: 0;
 	height:70px;
-	background-color:#eeeeee;
-	width:100%;
+	background-color:#654073;
 	z-index:100;
+	width:100%;
+}
+
+.site-nav h1, .site-nav h4 {
+	opacity: 1;
+}
+
+.navver {
+	margin-top:10px;
+	max-width:450px;
+	float:right;
+}
+
+.navver li {
+	display:inline-block;
+	padding-right:30px;
+}
+
+.navver li:hover {
+	cursor:pointer;
 }
 
 .bottom-shadow {
 	box-shadow: 0 5px 12px rgba(0,0,0,.25);
-}
-
-h1 {
-	font-family: 'Great Vibes', serif;
-	font-size:40px;
-	color:#fff;
 }
 
 .content-pad {
@@ -121,7 +84,11 @@ h1 {
 
 .brand {
 	position:fixed;
-	top:7px;
-	left:30px;
+	top:5px;
+	left:10px;
 	z-index:101;
+}
+
+#slideshow {
+	display:none;
 }
