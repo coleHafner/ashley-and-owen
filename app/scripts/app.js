@@ -15,20 +15,23 @@ angular.module('ashleyAndOwenApp', ['ui.router', 'ui.bootstrap'])
 
 	.run(['$rootScope', function($rootScope) {
 		$rootScope.navItems = [
+			{label: 'Home',			sref: 'home'},
 			{label: 'Details',		sref: 'details'},
-			{label: 'Rsvp',			sref: 'rsvp'},
 			{label: 'Gallery',		sref: 'gallery'},
+			{label: 'Rsvp',			sref: 'rsvp'},
 			{label: 'Our Story',	sref: 'about'}
 		];
 
 		$rootScope.goTo = function(pageId) {
 			var page = $('#' + pageId);
 
-			if(pageId == 'details') {
-				$(document).scrollTop(0);
+			if(pageId == 'home') {
+				$('html, body').animate({scrollTop:0},1000);
 				return;
 			}
 
-			page.ScrollTo();
+			var duration = pageId == 'details' ? 1000 : 700;
+
+			page.ScrollTo({duration: duration});
 		}
 	}]);

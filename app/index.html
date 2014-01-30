@@ -13,9 +13,10 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
 	<!-- build:css(.tmp) styles/main.css -->
-	<link rel="stylesheet" href="styles/bootstrap.css">
-	<link rel="stylesheet" href="styles/main.css">
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Great+Vibes">
+	<link rel="stylesheet" href="styles/bootstrap.css" />
+	<link rel="stylesheet" href="styles/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Great+Vibes" />
+	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Hammersmith+One' />
 	<!-- endbuild -->
 
 	<script src="bower_components/jquery/jquery.js"></script>
@@ -41,14 +42,10 @@
 				elementClassName: 'bottom-shadow'
 			});
 
-			$('#slideshow').slidesjs({
+			$('#slides').slidesjs({
 				height: 528,
-				width: 940,
-				navigation: {
-					active: true,
-					effect: 'slide'
-				}
-
+				navigation: {active: false},
+				pagination: {active: false}
 			});
 		});
 	</script>
@@ -67,9 +64,22 @@
 
 	<div class="container">
 
-		<div class="slide slide1" id="details"></div>
+		<div class="slide slide1" id="home">
+			<div class="nav-offset"></div>
+			<div class="content-pad">
+				<div class="intro"></div>
 
-		<div class="slide" id="rsvp">
+				<div class="intro-content">
+					<h2>August 23, 2014</h2>
+					<a href="#" ng-click="goTo('details')">
+						It's happening. Click for details.
+					</a>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="slide" id="details">
 			<div class="site-nav" id="site-nav">
 				<ul class="navver">
 					<li data-ng-repeat="item in navItems" ng-click="goTo(item.sref)">
@@ -77,17 +87,36 @@
 					</li>
 				</ul>
 			</div>
+
+			<div class="content-pad">
+				content here...xxxx
+			</div>
 		</div>
 
 		<div class="slide" id="gallery">
-			<div id="slideshow">
-				<img src="http://placehold.it/940x528">
-				<img src="http://placehold.it/940x528">
-				<img src="http://placehold.it/940x528">
-				<img src="http://placehold.it/940x528">
-				<img src="http://placehold.it/940x528">
+			<div class="nav-offset"></div>
+
+			<div id="slides">
+				<img src="../images/slide-heli.jpeg">
+				<img src="../images/slide-skis.jpg">
+				<img src="../images/slide-eng-bw.jpg">
+				<img src="../images/slide-mountains.jpg">
+				<img src="../images/slide-eng-bw1.jpg">
+				<img src="../images/slide-bike.jpg">
+				<img src="../images/slide-eng-tree.jpg">
+				<img src="../images/slide-boat.jpg">
+				<img src="../images/slide-eng-green.jpg">
+				<img src="../images/slide-snow.jpg">
+				<a class="slidesjs-previous slidesjs-navigation" href="#" title="Previous">
+					<div class="nav-offset">&lt;</div>
+				</a>
+				<a class="slidesjs-next slidesjs-navigation" href="#" title="Next">
+					<div class="nav-offset">&gt;</div>
+				</a>
 			</div>
 		</div>
+
+		<div class="slide" id="rsvp"></div>
 
 		<div class="slide" id="about"></div>
 	</div>
