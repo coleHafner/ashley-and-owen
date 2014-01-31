@@ -22,16 +22,19 @@ angular.module('ashleyAndOwenApp', ['ui.router', 'ui.bootstrap'])
 			{label: 'Our Story',	sref: 'about'}
 		];
 
-		$rootScope.goTo = function(pageId) {
+		$rootScope.goTo = function(pageId, hide) {
 			var page = $('#' + pageId);
 
 			if(pageId == 'home') {
 				$('html, body').animate({scrollTop:0},1000);
-				return;
+
+			}else {
+				var duration = pageId == 'details' ? 1000 : 700;
+				page.ScrollTo({duration: duration});
 			}
 
-			var duration = pageId == 'details' ? 1000 : 700;
-
-			page.ScrollTo({duration: duration});
+			if(hide) {
+				$('#navver-mobile').hide();
+			}
 		}
 	}]);

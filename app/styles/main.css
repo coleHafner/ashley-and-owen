@@ -17,8 +17,12 @@ h1, h4 {
 h2 {
 	font-family: 'Hammersmith One', sans-serif;
 	/*color:#00858c;*/
-	color:#fff;
+	color:#000;
 	font-size:30px;
+}
+
+h2.white {
+	color:#fff;
 }
 
 h1 {
@@ -27,6 +31,10 @@ h1 {
 
 h4 {
 	font-size:25px;
+}
+
+h4.black {
+	color:#000;
 }
 
 .container {
@@ -38,7 +46,7 @@ h4 {
 .slide {
 	position:relative;
 	width:100%;
-	height:792px;
+	min-height:792px;
 	background-color:#fff;
 	border-bottom:3px solid #eee;
 }
@@ -81,8 +89,29 @@ h4 {
 	padding-right:30px;
 }
 
-.navver li:hover {
+.navver-mobile li:hover, .navver li:hover {
 	cursor:pointer;
+}
+
+.navver-mobile {
+	position: fixed;
+	top:90px;
+	right:0;
+	bottom:0;
+	left:0;
+	list-style: none;
+	z-index:100;
+}
+
+.navver-mobile li {
+	padding-top:20px;
+	padding-bottom:20px;
+	border-bottom:1px solid #fff;
+	text-align: center;
+}
+
+.navver-mobile li:last-child {
+	border:0;
 }
 
 .bottom-shadow {
@@ -170,4 +199,45 @@ h4 {
 .intro-content a {
 	color:#fff;
 	font-weight:bold;
+}
+
+.desktop {
+	display: block;
+}
+
+.mobile {
+	display: none;
+}
+
+.margin-top {
+	margin-top:30px;
+}
+
+.polaroid {
+	padding:15px;
+	background-color:#fff;
+	box-shadow:2px 2px 5px rgba(0, 0, 0, .7);
+}
+
+.polaroid img {
+	width:100%;
+}
+
+.polaroid-offset {
+	margin-right:20px;
+}
+
+.details-row div.span4 {
+	min-height: 300px;
+	text-align: center;
+	border-top: 1px dashed #dedbdb;
+	border-right: 1px dashed #dedbdb;
+}
+
+.details-row div.span4:first-child {
+	border-left: 1px dashed #dedbdb;
+}
+
+.details-row-top div.span4 {
+	border-top:0;
 }
