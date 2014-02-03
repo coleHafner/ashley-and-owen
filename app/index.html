@@ -39,6 +39,15 @@
 	<!-- endbuild -->
 
 	<script type="text/javascript">
+
+		function autoHeight() {
+			console.log('autoheighting');
+			var viewPortHeight = $(window).height();
+			//$('.slide').height(viewPortHeight);
+			$('.slide').css('min-height', viewPortHeight);
+			$('.container').css('margin-top', viewPortHeight);
+		}
+
 		$(function(){
 			$('#site-nav').sticky({
 				topSpacing: 0,
@@ -46,12 +55,17 @@
 			});
 
 			$('#slides').slidesjs({
+				width:940,
 				height: 528,
 				navigation: {active: false},
 				pagination: {active: false}
 			});
+			
+			$(window).resize(function(){
+				autoHeight();
+			});
 
-			$('#countdown').countdown();
+			autoHeight();
 		});
 	</script>
 
@@ -126,6 +140,31 @@
 				</div>
 
 				<div class="row-fluid details-row">
+
+					<div class="span4">
+						<h2>Places to Stay</h2>
+						<ul class="places-list">
+
+							<li>
+								<a href="http://www.marriott.com/hotels/travel/mfrsh-springhill-suites-medford/" target="_blank">
+									Spring Hill Suites - Medford
+								</a>
+							</li>
+							<li>
+								<a href="http://book.bestwestern.com/bestwestern/US/OR/Ashland-hotels/BEST-WESTERN-Bard%27s-Inn/Hotel-Overview.do?propertyCode=38002" target="_blank">
+									Bard's Inn - Ashland
+								</a>
+							</li>
+
+
+							<li>
+								<a href="http://www.jacksonvilleinn.com/lodging.html" target="_blank">
+									Jacksonville Inn - Jacksonville
+								</a>
+							</li>
+						</ul>
+					</div>
+
 					<div class="span4">
 						<h2>Gift Registries</h2>
 						<a href="http://www.target.com/RegistryGiftGiverCmd?isPreview=false&status=completePageLink&listId=G36kXucwqEOclz6FxdDuiA&registryType=WD&cumulativeTime=-1&isAjax=false&noOfPings=" target="_blank">
@@ -135,29 +174,7 @@
 						<a href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=13784024&eventType=Wedding&pwsurl=?mcid=EM_triggeredem_emailregistryplural__allpromos" target="_blank">
 							<img src="../images/registry-bbab.png" />
 						</a>
-					</div>
-
-					<div class="span4">
-						<h2>Places to Stay</h2>
-						<ul class="places-list">
-							<li>
-								<a href="http://book.bestwestern.com/bestwestern/US/OR/Ashland-hotels/BEST-WESTERN-Bard%27s-Inn/Hotel-Overview.do?propertyCode=38002" target="_blank">
-									Bard's Inn - Ashland
-								</a>
-							</li>
-
-							<li>
-								<a href="http://www.marriott.com/hotels/travel/mfrsh-springhill-suites-medford/" target="_blank">
-									Spring Hill Suites - Medford
-								</a>
-							</li>
-
-							<li>
-								<a href="http://www.jacksonvilleinn.com/lodging.html" target="_blank">
-									Jacksonville Inn - Jacksonville
-								</a>
-							</li>
-						</ul>
+						<div style="margin-top:10px;">Click logo to view!</div>
 					</div>
 
 					<div class="span4">
@@ -184,6 +201,7 @@
 									Visit Crater Lake
 								</a>
 							</li>
+
 						</ul>
 					</div>
 				</div>
@@ -195,6 +213,7 @@
 			<div class="nav-offset"></div>
 
 			<div id="slides">
+				<img src="../images/slide-eng-green.jpg">
 				<img src="../images/slide-heli.jpeg">
 				<img src="../images/slide-skis.jpg">
 				<img src="../images/slide-eng-bw.jpg">
@@ -210,16 +229,15 @@
 				<img src="../images/slide-boat.jpg">
 
 				<img src="../images/extra_boat2.jpg">
-				<img src="../images/slide-eng-green.jpg">
 
 				<img src="../images/extra_as.jpg">
 				<img src="../images/slide-snow.jpg">
 
 				<a class="slidesjs-previous slidesjs-navigation" href="#" title="Previous">
-					<div class="nav-offset">&lt;</div>
+					<div class="slidejs-nav-offset slidejs-nav-offset-prev">&lt;</div>
 				</a>
 				<a class="slidesjs-next slidesjs-navigation" href="#" title="Next">
-					<div class="nav-offset">&gt;</div>
+					<div class="slidejs-nav-offset slidejs-nav-offset-next">&gt;</div>
 				</a>
 			</div>
 		</div>
