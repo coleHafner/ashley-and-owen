@@ -48,7 +48,6 @@ h4.black {
 	width:100%;
 	min-height:792px;
 	background-color:#fff;
-	border-bottom:3px solid #eee;
 }
 
 #gallery {
@@ -239,16 +238,21 @@ h4.black {
 
 .polaroid-offset {
 	margin-right:20px;
+	margin-bottom:20px;
 }
 
-.details-row div.span4 {
+.details-row div.span4, .details-row div.span6 {
 	min-height: 300px;
 	text-align: center;
 	border-top: 1px dashed #dedbdb;
 	border-right: 1px dashed #dedbdb;
 }
 
-.details-row div.span4:first-child {
+.details-row div.span6 {
+	text-align: left;
+}
+
+.details-row div.span4:first-child, .details-row div.span6:first-child {
 	border-left: 1px dashed #dedbdb;
 }
 
