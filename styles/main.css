@@ -244,16 +244,19 @@ h4.black {
 .details-row div.span4, .details-row div.span6 {
 	min-height: 300px;
 	text-align: center;
-	border-top: 1px dashed #dedbdb;
-	border-right: 1px dashed #dedbdb;
+	border-right: 1px dashed #000;
 }
 
 .details-row div.span6 {
 	text-align: left;
 }
 
-.details-row div.span4:first-child, .details-row div.span6:first-child {
-	border-left: 1px dashed #dedbdb;
+.details-row div.span4:last-child, .details-row div.span6:last-child {
+	border-right: 0;
+}
+
+.details-row-top {
+	border-bottom:1px dashed #000;
 }
 
 .details-row-top div.span4 {
@@ -267,4 +270,19 @@ h4.black {
 .places-list li {
 	padding-top: 5px;
 	padding-bottom: 5px;
+}
+
+.registry-link {
+	display:block;
+	margin-left:20px;
+}
+
+.registry-half {
+	float:left;
+	width:50%;
+}
+
+.header-offset {
+	margin-right:15px;
+	padding-left:20px;
 }

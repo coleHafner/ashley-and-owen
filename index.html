@@ -30,13 +30,27 @@
 
 	<script type="text/javascript">
 
-		var navItems = [
-			{label: 'Home',			sref: 'home'},
-			{label: 'Details',		sref: 'details'},
-			{label: 'Gallery',		sref: 'gallery'},
-			{label: 'Rsvp',			sref: 'rsvp'},
-			{label: 'Our Story',	sref: 'about'}
-		];
+		function setTitleAndHash(pageId) {
+
+			var navItems = {
+				'home'		: 'Home',
+				'details'	: 'Details',
+				'gallery'	: 'Gallery',
+				'rsvp'		: 'RVSP',
+				'about'		: 'Our Story'
+			};
+
+			var pageId = pageId === null ? 'home' : pageId;
+			document.title = navItems[pageId] + ' | Ashley and Owen';
+			var pageId = pageId = '#' + pageId;
+
+			if(history.pushState) {
+				history.pushState(null, null, pageId);
+			}else {
+				location.hash = pageId;
+			}
+
+		}
 
 		function autoHeight() {
 			var viewPortHeight = $(window).height();
@@ -59,6 +73,7 @@
 				$('#navver-mobile').hide();
 			}
 
+			setTitleAndHash(pageId)
 			return false;
 		}
 
@@ -81,6 +96,8 @@
 
 			autoHeight();
 		});
+
+		setTitleAndHash(null);
 	</script>
 
 </head>
@@ -105,7 +122,7 @@
 				<div class="intro-content">
 					<h2 class="white">August 23, 2014</h2>
 
-					<a href="#" onclick="goTo('details')">
+					<a href="javascript:void(0)" onclick="goTo('details')">
 						It's happening. Click for details.
 					</a>
 				</div>
@@ -125,35 +142,29 @@
 
 			<div class="content-pad">
 				<div class="row-fluid details-row details-row-top">
-					<div class="span4">
+					<div class="span6">
 						<h2>Venue, Date and Time</h2>
-						<address>
-							<a href="http://www.orchardhomebb.com/Pages/default.aspx" target="_blank">
-								Orchard Home Bed & Breakfast
-							</a>
-							<br/>
-							1805 South Stage Road <br/>
-							Medford, Oregon 97501
-						</address>
-						August 23, 2014 @ 4:30PM
+						<div class="header-offset">
+							<address>
+								<a href="http://www.orchardhomebb.com/Pages/default.aspx" target="_blank">
+									Orchard Home Bed & Breakfast
+								</a>
+								<br/>
+								1805 South Stage Road <br/>
+								Medford, Oregon 97501
+							</address>
+							August 23, 2014 @ 4:30PM
 
-					</div>
-
-					<div class="span4">
-						<h2>Honeymoon</h2>
-
-						<a href="http://www.honeyfund.com/wedding/ashleyandowen" target="_blank">
-							<img src="../images/honeyfund-logo.jpg" />
-						</a>
-
-						<div style="padding-top:15px;">
-							Click the logo to donate!
+							<p class="margin-top">
+								Ashley and Owen are encouraging guests to carpool, as
+								parking at the venue is limited.
+							</p>
 						</div>
 					</div>
 
-					<div class="span4">
+					<div class="span6">
 
-						<h2>Ashland Activities</h2>
+						<h2>Local Activities</h2>
 
 						<ul class="places-list">
 							<li>
@@ -178,6 +189,18 @@
 								</a>
 							</li>
 
+							<li>
+								<a href="http://traveloregon.com/see-do/listing/?type[]=recreation&type[]=hiking&location_text=&latLng=&location[]=southern-oregon&location[]=All&date_start=&date_end=&date_all=on" target="_blank">
+									Go Hiking
+								</a>
+							</li>
+
+							<li>
+								<a href="http://www.sorwa.org" target="_blank">
+									Visit a Local Winery
+								</a>
+							</li>
+
 						</ul>
 					</div>
 				</div>
@@ -185,11 +208,11 @@
 				<div class="row-fluid details-row">
 
 					<div class="span6">
-						<h2 style="text-align: left;padding-left:20px;">Places to Stay</h2>
+						<h2>Places to Stay</h2>
 
 						<div class="clearfix">
 							<div style="float:left;width:458px;">
-								<div style="margin-right:15px;padding-left:20px;">
+								<div class="header-offset">
 									Ashley and Owen have booked a block of rooms at the La Quinta Inn of Ashland.
 									Guests staying for the wedding qualify for a discounted rate. To book, call the
 									hotel direct at 541-482-6932 and ask for the rooms reserved under the Black/King
@@ -201,7 +224,7 @@
 								<img style="display:block;margin:auto;" src="../images/la-quinta-inn-logo.png" />
 							</div>
 						</div>
-						<div style="padding-left:20px;margin-top:10px;">
+						<div class="header-offset margin-top">
 							Other Places:
 							<a href="http://www.marriott.com/hotels/travel/mfrsh-springhill-suites-medford/" target="_blank">
 								Spring Hill Suites - Medford
@@ -221,7 +244,7 @@
 
 						<div class="row-fluid">
 							<div class="span5">
-								<h2 style="text-align: left;">
+								<h2>
 									Gift Registries
 								</h2>
 							</div>
@@ -230,17 +253,27 @@
 							</div>
 						</div>
 
-						<div class="row">
-							<div style="float:left;width:50%;">
-								<a style="display:block;margin-left:20px;"
-								   href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=13784024&eventType=Wedding&pwsurl=?mcid=EM_triggeredem_emailregistryplural__allpromos" target="_blank">
-									<img src="../images/registry-bbab.png" />
-								</a>
+						<div class="header-offset">
+							<div class="row">
+								<div class="registry-half">
+									<a class="registry-link"
+									   href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=13784024&eventType=Wedding&pwsurl=?mcid=EM_triggeredem_emailregistryplural__allpromos" target="_blank">
+										<img src="../images/registry-bbab.png" />
+									</a>
+								</div>
+								<div class="registry-half">
+									<a href="http://www.target.com/RegistryGiftGiverCmd?isPreview=false&status=completePageLink&listId=G36kXucwqEOclz6FxdDuiA&registryType=WD&cumulativeTime=-1&isAjax=false&noOfPings=" target="_blank">
+										<img src="../images/registry-target.png" />
+									</a>
+								</div>
 							</div>
-							<div style="float:left;width:50%;">
-								<a href="http://www.target.com/RegistryGiftGiverCmd?isPreview=false&status=completePageLink&listId=G36kXucwqEOclz6FxdDuiA&registryType=WD&cumulativeTime=-1&isAjax=false&noOfPings=" target="_blank">
-									<img src="../images/registry-target.png" />
-								</a>
+							<div class="row margin-top">
+								<div class="span12">
+
+									<a class="registry-link" href="http://www.honeyfund.com/wedding/ashleyandowen" target="_blank">
+										<img src="../images/honeyfund-logo.jpg" />
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
