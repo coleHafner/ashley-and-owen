@@ -1,0 +1,424 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="styles/bootstrap.css" />
+	<link rel="stylesheet" href="styles/main.css" />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Great+Vibes" />
+	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Hammersmith+One' />
+	<!-- endbuild -->
+
+	<!-- build:js({.tmp,app}) scripts/scripts.js -->
+	<script src="scripts/vendor/jquery.js"></script>
+	<script src="scripts/vendor/jquery.sticky.js"></script>
+	<script src="scripts/vendor/jquery.scrollto.js"></script>
+	<script src="scripts/vendor/jquery.slides.js"></script>
+	<script src="scripts/vendor/bootstrap.js"></script>
+	<script src="scripts/vendor/jquery.plugin.min.js"></script>
+	<!-- endbuild -->
+
+	<script type="text/javascript">
+
+		var navItems = [
+			{label: 'Home',			sref: 'home'},
+			{label: 'Details',		sref: 'details'},
+			{label: 'Gallery',		sref: 'gallery'},
+			{label: 'Rsvp',			sref: 'rsvp'},
+			{label: 'Our Story',	sref: 'about'}
+		];
+
+		function autoHeight() {
+			var viewPortHeight = $(window).height();
+			$('.slide').css('min-height', viewPortHeight);
+			$('.container').css('margin-top', viewPortHeight);
+		}
+
+		function goTo(pageId, hide) {
+			var page = $('#' + pageId);
+
+			if(pageId == 'home') {
+				$('html, body').animate({scrollTop:0},1000);
+
+			}else {
+				var duration = pageId == 'details' ? 1000 : 700;
+				page.ScrollTo({duration: duration});
+			}
+
+			if(hide) {
+				$('#navver-mobile').hide();
+			}
+
+			return false;
+		}
+
+		$(function(){
+			$('#site-nav').sticky({
+				topSpacing: 0,
+				elementClassName: 'bottom-shadow'
+			});
+
+			$('#slides').slidesjs({
+				width:940,
+				height: 528,
+				navigation: {active: false},
+				pagination: {active: false}
+			});
+
+			$(window).resize(function(){
+				autoHeight();
+			});
+
+			autoHeight();
+		});
+	</script>
+
+</head>
+<body ng-app="ashleyAndOwenApp">
+
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+	<div class="container">
+
+		<div class="slide slide1" id="home">
+			<div class="nav-offset"></div>
+			<div class="content-pad">
+				<div class="intro"></div>
+
+				<div class="intro-content">
+					<h2 class="white">August 23, 2014</h2>
+
+					<a href="#" onclick="goTo('details')">
+						It's happening. Click for details.
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="slide" id="details">
+			<div class="site-nav" id="site-nav">
+				<ul class="navver desktop">
+					<li onclick="goTo('home')"><h4>Home</h4></li>
+					<li onclick="goTo('details')"><h4>Details</h4></li>
+					<li onclick="goTo('gallery')"><h4>Gallery</h4></li>
+					<li onclick="goTo('rsvp')"><h4>RSVP</h4></li>
+					<li onclick="goTo('about')"><h4>Our Story</h4></li>
+				</ul>
+			</div>
+
+			<div class="content-pad">
+				<div class="row-fluid details-row details-row-top">
+					<div class="span4">
+						<h2>Venue, Date and Time</h2>
+						<address>
+							<a href="http://www.orchardhomebb.com/Pages/default.aspx" target="_blank">
+								Orchard Home Bed & Breakfast
+							</a>
+							<br/>
+							1805 South Stage Road <br/>
+							Medford, Oregon 97501
+						</address>
+						August 23, 2014 @ 4:30PM
+
+					</div>
+
+					<div class="span4">
+						<h2>Honeymoon</h2>
+
+						<a href="http://www.honeyfund.com/wedding/ashleyandowen" target="_blank">
+							<img src="../images/honeyfund-logo.jpg" />
+						</a>
+
+						<div style="padding-top:15px;">
+							Click the logo to donate!
+						</div>
+					</div>
+
+					<div class="span4">
+
+						<h2>Ashland Activities</h2>
+
+						<ul class="places-list">
+							<li>
+								<a href="http://www.osfashland.org/" target="_blank">
+									Catch a Play
+								</a>
+							</li>
+							<li>
+								<a href="http://noahsrafting.com/" target="_blank">
+									Go Fishing or Rafting
+								</a>
+							</li>
+							<li>
+								<a href="http://www.brittfest.org/" target="_blank">
+									See a Concert
+								</a>
+							</li>
+
+							<li>
+								<a href="http://www.nps.gov/crla/index.htm" target="_blank">
+									Visit Crater Lake
+								</a>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+
+				<div class="row-fluid details-row">
+
+					<div class="span6">
+						<h2 style="text-align: left;padding-left:20px;">Places to Stay</h2>
+
+						<div class="clearfix">
+							<div style="float:left;width:458px;">
+								<div style="margin-right:15px;padding-left:20px;">
+									Ashley and Owen have booked a block of rooms at the La Quinta Inn of Ashland.
+									Guests staying for the wedding qualify for a discounted rate. To book, call the
+									hotel direct at 541-482-6932 and ask for the rooms reserved under the Black/King
+									Wedding Party. The discounted rate will be available until July 22 2014.
+								</div>
+							</div>
+
+							<div style="float:left;">
+								<img style="display:block;margin:auto;" src="../images/la-quinta-inn-logo.png" />
+							</div>
+						</div>
+						<div style="padding-left:20px;margin-top:10px;">
+							Other Places:
+							<a href="http://www.marriott.com/hotels/travel/mfrsh-springhill-suites-medford/" target="_blank">
+								Spring Hill Suites - Medford
+							</a>
+							&nbsp;|&nbsp;
+							<a href="http://book.bestwestern.com/bestwestern/US/OR/Ashland-hotels/BEST-WESTERN-Bard%27s-Inn/Hotel-Overview.do?propertyCode=38002" target="_blank">
+								Bard's Inn - Ashland
+							</a>
+							&nbsp;|&nbsp;
+							<a href="http://www.jacksonvilleinn.com/lodging.html" target="_blank">
+								Jacksonville Inn
+							</a>
+						</div>
+					</div>
+
+					<div class="span6">
+
+						<div class="row-fluid">
+							<div class="span5">
+								<h2 style="text-align: left;">
+									Gift Registries
+								</h2>
+							</div>
+							<div class="span7">
+								<div  style="margin-top:18px;">(click logo to view registry)</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div style="float:left;width:50%;">
+								<a style="display:block;margin-left:20px;"
+								   href="http://www.bedbathandbeyond.com/store/giftregistry/view_registry_guest.jsp?registryId=13784024&eventType=Wedding&pwsurl=?mcid=EM_triggeredem_emailregistryplural__allpromos" target="_blank">
+									<img src="../images/registry-bbab.png" />
+								</a>
+							</div>
+							<div style="float:left;width:50%;">
+								<a href="http://www.target.com/RegistryGiftGiverCmd?isPreview=false&status=completePageLink&listId=G36kXucwqEOclz6FxdDuiA&registryType=WD&cumulativeTime=-1&isAjax=false&noOfPings=" target="_blank">
+									<img src="../images/registry-target.png" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="slide" id="gallery">
+
+			<div class="nav-offset"></div>
+
+			<div id="slides">
+				<img src="../images/slide-eng-green.jpg">
+				<img src="../images/slide-heli.jpeg">
+				<img src="../images/slide-skis.jpg">
+				<img src="../images/slide-eng-bw.jpg">
+				<img src="../images/slide-mountains.jpg">
+				<img src="../images/slide-eng-bw1.jpg">
+				<img src="../images/slide-bike.jpg">
+				<img src="../images/slide-eng-flamingo.jpg">
+
+				<img src="../images/extra_shades.jpg">
+				<img src="../images/slide-eng-tree.jpg">
+
+				<img src="../images/extra_goggles.jpg">
+				<img src="../images/slide-boat.jpg">
+
+				<img src="../images/extra_boat2.jpg">
+
+				<img src="../images/extra_as.jpg">
+				<img src="../images/slide-snow.jpg">
+
+				<a class="slidesjs-previous slidesjs-navigation" href="#" title="Previous">
+					<div class="slidejs-nav-offset slidejs-nav-offset-prev">&lt;</div>
+				</a>
+				<a class="slidesjs-next slidesjs-navigation" href="#" title="Next">
+					<div class="slidejs-nav-offset slidejs-nav-offset-next">&gt;</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="slide" id="rsvp">
+
+			<div class="nav-offset"></div>
+			<div class="content-pad">
+				<h2>RSVP</h2>
+				<div class="hero-unit">
+					Coming Soon...
+				</div>
+			</div>
+		</div>
+
+		<div class="slide" id="about">
+
+			<div class="nav-offset"></div>
+
+			<div class="content-pad">
+				<div class="pull-left">
+					<div class="polaroid polaroid-offset">
+						<img src="../images/proposal.jpg" />
+					</div>
+				</div>
+				<h2>Our Story</h2>
+				<p>
+					Side Note: While this story is written from Ashley’s perspective,
+					it was written by both of us in our living room while snuggling
+					with our adorable cats, Jasper and Friday.
+				</p>
+
+				<p>
+					Owen and I can’t remember exactly when we met. Having gone to
+					middle school together and having both been members of the band,
+					we can only assume we must have met then, me with my little clarinet
+					and Owen with his giant tuba. However, honestly we don’t really
+					remember our first meeting. Maybe it was band, maybe our sophomore
+					year science class, but our first clear memories of each other
+					came in the spring of 2004 when, through our mutual friends,
+					Claire and Preston, we started hanging out.
+				</p>
+
+				<p>
+					The four of us had a lot of fun that summer, going to the roller
+					rink, miniature golfing and, of course, playing epic games of
+					Apples to Apples. Sometime that summer Owen showed me the collection
+					of music on his I-Pod, and I said to myself, “Simply based off
+					his music taste, I could marry this guy!” I had no idea how right
+					that statement would end up being. However, after that summer
+					Owen headed to college in Colorado, and I stayed in Ashland to
+					attend Southern Oregon University.
+				</p>
+
+				<p>
+					Over the years we stayed in touch. We wrote letters back and forth
+					while Owen was working at a summer camp, we talked during the
+					occasional AIM chat and always met up at Christmas time when he
+					was back in town.  In 2009, we were both home for the holidays,
+					which meant getting to spend some time together. We enjoyed Ashland’s
+					beautiful Christmas lights, saw each other out with friends and
+					joined in the traditional King family cookie party. Two months later,
+					I decided to visit my friend Therese who had recently moved to Denver.
+					While there, I went and visited Owen in Gunnison, Colorado.
+				</p>
+
+				<p>
+					He picked me up at the bus stop in Salida, an hour away from Gunnison,
+					and we drove over beautiful Monarch Pass into the amazing Gunnison
+					Valley. That night we went to dinner at the Gunnysack in Gunnison.
+					Looking back on this dinner now, we consider this as our first date.
+					We spent the rest of the visit snowshoeing in the Black Canyon,
+					skiing on Monarch Mountain and exploring Gunnison. In these three
+					days, we began to fall for each other. We realized the deep connection
+					we had with one another which had sprouted from our long friendship
+					and appreciation for each others’ unique qualities. A month after our
+					Colorado adventure, we decided that I should move to Colorado to
+					see if we could make the relationship work. Well we made it work,
+					and we have been together having a blast ever since. Some people
+					ask us if we are marrying our high school sweethearts, to which we
+					say, “No, but I am marrying my best friend.”
+				</p>
+
+				<h2>The Proposal</h2>
+
+				<p>
+					June of 2013 was a particularly rainy month in Southern Oregon.
+					At the time, Owen and I had one afternoon a week off together.
+					We generally liked to go hiking or fishing together on these days.
+					During this particular June, it rained every Monday we had off
+					together. Owen seemed to be getting increasingly upset by this
+					bad weather, because for some unknown reason we just had to hike
+					to the top of Mt. Ashland. On the very last Monday of the month,
+					it was once again raining. Owen was again annoyed, so I told him,
+					“Let’s just hike anyways. We are Oregonians! We can handle the rain.”
+					So we headed up to the mountain.
+				</p>
+
+				<p>
+					As we drove across the backside of Mt. Ashland, it began to rain
+					even harder and started to mix with snow. We drove as close to
+					top of the mountain as we could to avoid getting drenched. We
+					bundled up and started our mad dash to the summit. It was raining
+					so hard that I was completely soaked in a matter of minutes. The
+					whole time I was thinking to myself, “And why did we have to do
+					this hike today? It’s raining and freezing, and the hike is so short
+					it’s hardly even worth it!” However, once we got to the summit, even
+					I had to admit it was beautiful looking down at the Rogue Valley
+					sitting below the thick blanket of fog.
+				</p>
+
+				<p>
+					You can see for miles from the top of Mt Ashland, and as I was
+					admiring the view Owen pulled out a wrapped box. The box was small
+					and flat, clearly not the size of a ring box. Owen told me it was
+					a gift from a trip to Mexico we had taken the previous March. Confused
+					as to why he hadn’t given it to me before, I opened the box to find a
+					beautiful silver heart shaped locket. The locket folded out into a
+					four-leaf clover. In each leaf of the clover was a word spelling out
+					a question I had been hoping to hear: “Will You Marry Me?” I
+					looked up to see Owen down on one knee. All of Owen’s strange
+					behavior that day suddenly made sense, and I quickly shouted,
+					“Yes!” He kissed me, took off my glove and placed the ring on my
+					finger. We stayed there for a minute admiring the view, and Owen asked
+					me, “Should we stay and savor the moment?” We both looked at each and
+					said “No way, it’s freezing!” Thus, we started our engagement with
+					a mad dash to the car, soaked to the bone but happy as could be!
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="brand">
+		<h1>Ashley and Owen</h1>
+	</div>
+
+	<ul class="navver-mobile mobile" id="navver-mobile">
+		<li data-ng-repeat="item in navItems" ng-click="goTo(item.sref, true)">
+			<h4>{{ item.label }}</h4>
+		</li>
+	</ul>
+
+</body>
+</html>
