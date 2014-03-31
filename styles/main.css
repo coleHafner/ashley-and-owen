@@ -104,6 +104,7 @@ h4.black {
 	top:20px;
 	left:15px;
 	z-index:101;
+	min-width:200px;
 }
 
 #slideshow {
@@ -277,15 +278,15 @@ h4.black {
 
 .navver-trigger {
 	display:none;
-	width: 50px;
-	height:50px;
+	width: 40px;
+	height:40px;
 	position:fixed;
 	right:20px;
-	top:20px;
+	top:10px;
 	z-index: 200;
 	background-color: #835292;
 	text-align: center;
-	line-height: 47px;
+	line-height: 43px;
 }
 
 .navver-trigger:hover {
@@ -298,7 +299,7 @@ h4.black {
 
 .navver-mobile {
 	position: fixed;
-	top:90px;
+	top:60px;
 	right:0;
 	bottom:0;
 	left:-30px;
@@ -308,8 +309,8 @@ h4.black {
 }
 
 .navver-mobile li {
-	padding-top:20px;
-	padding-bottom:20px;
+	padding-top:10px;
+	padding-bottom:10px;
 	border-bottom:1px solid #654073;
 	text-align: center;
 	max-height:40px;
@@ -347,8 +348,12 @@ h4.black {
 		background-color:#654073;
 	}
 
+	.nav-offset, .nav-offset-first, .site-nav {
+		height: 60px;
+	}
+
 	h1 {
-		font-size:45px;
+		font-size:30px;
 	}
 
 	h2 {
@@ -385,5 +390,32 @@ h4.black {
 		margin-bottom:15px;
 	}
 
+	#slides .slidesjs-navigation {
+		border-radius: 25px;
+		height: 25px;
+		width: 25px;
+		background-color: #999;
+		display: block;
+		z-index:99;
+		color:#888;
+		font-size:17px;
+		font-weight:bold;
+		line-height:23px;
+	}
 
+	#slides .slidesjs-navigation div {
+		display:none;
+	}
+
+
+	.brand {
+		top:5px;
+	}
+
+	body {
+	    background: none; 
+	    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	    color: #333;
+		background-size: auto;
+	}
 }
