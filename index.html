@@ -28,7 +28,7 @@
 	<script src="scripts/vendor/jquery.plugin.min.js"></script>
 	<!-- endbuild -->
 </head>
-<body ng-app="ashleyAndOwenApp">
+<body>
 
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -68,7 +68,7 @@
 			</div>
 
 			<div class="content-pad">
-				<div class="row details-row details-row-top">
+				<div class="row-fluid details-row details-row-top">
 					<div class="span6">
 						<h2>Venue, Date and Time</h2>
 						<div class="header-offset">
@@ -132,7 +132,7 @@
 					</div>
 				</div>
 
-				<div class="row details-row">
+				<div class="row-fluid details-row">
 
 					<div class="span6">
 						<h2>Places to Stay</h2>
@@ -364,7 +364,7 @@
 	</div>
 
 	<ul class="navver-mobile mobile" id="navver-mobile">
-		<li onclick="goTo('home', true)"><h4>Home</h4></li>
+		<!-- <li onclick="goTo('home', true)"><h4>Home</h4></li> -->
 		<li onclick="goTo('details', true)"><h4>Details</h4></li>
 		<li onclick="goTo('gallery', true)"><h4>Gallery</h4></li>
 		<li onclick="goTo('rsvp', true)"><h4>RSVP</h4></li>
@@ -398,9 +398,11 @@
 		}
 
 		function autoHeight() {
-			var viewPortHeight = $(window).height();
+			var viewPortHeight = $(window).height(),
+				marginTop = $(window).width() >= 933 ? viewPortHeight : 0;
+
 			$('.slide').css('min-height', viewPortHeight);
-			$('.container').css('margin-top', viewPortHeight);
+			$('.container').css('margin-top', marginTop);
 		}
 
 		function goTo(pageId, hide) {
@@ -423,8 +425,8 @@
 		}
 
 		function toggleMobileNav() {
-			var toggleFunc = mobileNav.css('display') == 'block' ? 'slideUp' : 'slideDown';
-			mobileNav[toggleFunc](500);
+			var toggleFunc = mobileNav.css('display') == 'block' ? 'hide' : 'show';
+			mobileNav[toggleFunc]();
 		}
 
 		$(function(){
