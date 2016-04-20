@@ -1,0 +1,441 @@
+body {
+    background: url(../images/bg2.jpg) no-repeat center center fixed;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+
+h1 {
+	font-family: 'great vibes', serif;
+	color:#fff;
+	opacity: 1;
+}
+
+h4 {
+	font-family: 'arial', serif;
+	color:#fff;
+	opacity: 1;
+}
+
+h2 {
+	font-family: 'calibri', sans-serif;
+	color:#000;
+	font-size:30px;
+}
+
+h2.white {
+	color:#fff;
+}
+
+h1 {
+	font-size:60px;
+}
+
+h4 {
+	font-size:25px;
+}
+
+h4.black {
+	color:#000;
+}
+
+.container {
+	position:relative;
+	margin-top: 1600px;
+	width:100%;
+}
+
+.slide {
+	position: relative;
+	width:100%;
+	min-height:600px;
+        max-height:1000px;
+	background-color:#fff;
+}
+
+#gallery {
+	max-width: 
+      
+        
+}
+
+.nav-offset {
+	height:90px;
+}
+
+.slide1 {
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	background-color:transparent;
+}
+
+.site-nav {
+	position:absolute;
+	left:0;
+	top: 0;
+	height:90px;
+	background-color:#0000ff;
+	z-index:100;
+	width:100%;
+}
+
+.site-nav h1, .site-nav h4 {
+	opacity: 1;
+}
+
+.navver {
+	margin-top:30px;
+	max-width:550px;
+	float:right;
+}
+
+.navver li {
+	display:inline-block;
+	padding-right:30px;
+}
+
+.bottom-shadow {
+	box-shadow: 0 5px 12px rgba(0,0,0,.25);
+}
+
+.content-pad {
+	padding:30px;
+}
+
+.brand {
+	position:fixed;
+	top:20px;
+	left:15px;
+	z-index:101;
+	min-width:200px;
+}
+
+#slideshow {
+	display:none;
+}
+
+#slides {
+	position:relative;
+}
+
+#slides .slidesjs-navigation {
+	position: absolute;
+	top: 41%;
+	border-radius: 50px;
+	height: 50px;
+	width: 50px;
+	background-color: #999;
+	display: block;
+	z-index:99;
+	color:#888;
+	font-size:35px;
+	font-weight:bold;
+	line-height:45px;
+}
+
+#slides a.slidesjs-navigation:hover {
+	text-decoration:none;
+	background-color:#ccc;
+}
+
+#slides .slidejs-nav-offset {
+	margin-left:17px;
+	margin-top:0px;
+}
+
+#slides .slidejs-nav-offset-next {
+	margin-left:17px;
+}
+
+
+#slides .slidejs-nav-offset-prev {
+	margin-left:13px;
+}
+
+#slides .slidesjs-previous {
+	left: 10px;
+}
+
+#slides .slidesjs-next {
+	right: 10px;
+}
+
+.content-pad {
+	position:relative;
+	padding:15px;
+}
+
+.intro, .intro-content {
+	width:275px;
+	border-radius: 275px;
+}
+
+.intro {
+	position:relative;
+	background-color: #000;
+	height: 275px;
+	opacity: .00;
+}
+
+.intro-content {
+	position:absolute;
+	text-align: center;
+	padding-top:120px;
+	top:0;
+	left:0;
+	color:#fff;
+}
+
+
+.intro-content a {
+	color:#fff;
+	font-weight:bold;
+}
+
+.desktop {
+	display: block;
+}
+
+.mobile {
+	display: none;
+}
+
+.margin-top {
+	margin-top:30px;
+}
+
+.polaroid {
+	padding:15px;
+	background-color:#fff;
+	box-shadow:2px 2px 5px rgba(0, 0, 0, .7);
+}
+
+.polaroid img {
+	width:100%;
+}
+
+.polaroid-offset {
+	margin-right:20px;
+	margin-bottom:20px;
+}
+
+.details-row div.span4, .details-row div.span6 {
+	height:100%;
+	min-height: 200px;
+	text-align: center;
+	border-right: 1px dashed #000;
+}
+
+.details-row div.span6 {
+	text-align: left;
+}
+
+.details-row div.span4:last-child, .details-row div.span6:last-child {
+	border-right: 0;
+}
+
+.details-row-top {
+	border-bottom:1px dashed #000;
+}
+
+.details-row-top div.span4 {
+	border-top:0;
+}
+
+.places-list {
+	list-style: none;
+}
+
+.places-list li {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.registry-link {
+	display:block;
+	margin-left:20px;
+}
+.registry-linkplus {
+	display:block;
+	margin-left:40px;
+}
+.registry-half {
+	float:left;
+	width:50%;
+}
+
+.header-offset {
+	margin-right:15px;
+	padding-left:20px;
+}
+
+.center {
+	text-align: center;
+}
+
+.hotel-container {
+	float:left;
+	width:458px;
+}
+
+.hotel-logo {
+	float:left;
+}
+
+.navver-trigger {
+	display:none;
+	width: 40px;
+	height:40px;
+	position:fixed;
+	right:20px;
+	top:10px;
+	z-index: 200;
+	background-color: #0080ff;
+	text-align: center;
+	line-height: 43px;
+}
+
+.navver-trigger:hover {
+	cursor:pointer;
+}
+
+.navver-mobile li:hover, .navver li:hover {
+	cursor:pointer;
+}
+
+.navver-mobile {
+	position: fixed;
+	top:60px;
+	right:0;
+	bottom:0;
+	left:-30px;
+	list-style: none;
+	z-index:100;
+	background-color:#0080ff;
+}
+
+.navver-mobile li {
+	padding-top:10px;
+	padding-bottom:10px;
+	border-bottom:1px solid #0080ff;
+	text-align: center;
+	max-height:40px;
+	background-color: ##0080ff;
+}
+
+.navver-mobile li:first-child {
+	border-top:1px solid #0080ff;
+}
+
+@media (max-width:933px) {
+	.navver {
+		display:none;
+	}
+
+	.navver-trigger {
+		display:block;
+	}
+
+	.navver-mobile {
+		bottom:auto;
+		left:22px;
+		right:50px;
+	}
+
+	.intro, .intro-content {
+		display:none;
+	}
+
+	.nav-offset {
+		background-color: #0080ff;
+	}
+
+	.nav-offset-first {
+		background-color:#0080ff;
+	}
+
+	.nav-offset, .nav-offset-first, .site-nav {
+		height: 60px;
+	}
+
+	h1 {
+		font-size:30px;
+	}
+
+	h2 {
+		text-align: center;
+	}
+
+	#details h2 {
+		font-size: 20px;
+		text-align: left;
+	}
+
+	.hotel-container {
+		width:auto;
+		float:none;
+	}
+
+	.details-row, .details-row div.span4:last-child, .details-row div.span6:last-child, .details-row div.span4, .details-row div.span6 {
+		border: 0;
+		height: auto;
+		min-height: 100px;
+		width:auto;
+	}
+
+	.details-row, details-row div.span6:last-child, .details-row div.span6 {
+		border-bottom: 1px dashed #000;
+	}
+
+	.details-row div.span6 {
+		width: 100%;
+	}
+
+	.hotel-logo {
+		float:none;
+	}
+
+	.other-hotels {
+		text-align: center;
+		margin-bottom:15px;
+	}
+
+	#slides .js-navigation {
+		border-radius: 25px;
+		height: 25px;
+		width: 25px;
+		background-color: #999;
+		display: block;
+		z-index:99;
+		color:#888;
+		font-size:17px;
+		font-weight:bold;
+		line-height:23px;
+	}
+
+	#slides .slidesjs-navigation div {
+		display:none;
+	}
+
+	#home {
+		display:none;
+	}
+
+
+	.brand {
+		top:5px;
+	}
+
+	body {
+		background: url(../images/bg-mobile.jpg) no-repeat center center fixed;
+	    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	    color: #333;
+	}
+}
